@@ -7,7 +7,7 @@ import {
 
 // layouts and pages
 import RootLayout from './layouts/RootLayout'
-import Dashboard, { tasksLoader } from './pages/Dashboard'
+import Dashboard from './pages/Dashboard'
 import Create from './pages/Create'
 import Profile from './pages/Profile'
 import Workspace from './pages/Workspace'
@@ -16,7 +16,7 @@ import Workspace from './pages/Workspace'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Dashboard /> } loader={tasksLoader} />
+      <Route index element={<Dashboard /> } />
       <Route path="workspace" element={<Workspace />} />
       <Route path="create" element={<Create />} />
       <Route path="profile" element={<Profile />} />

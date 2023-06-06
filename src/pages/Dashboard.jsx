@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 
 export default function Dashboard() {
-  const tasks = useLoaderData() // precisa adicionar o loader={tasksLoader} la no app.json pra funcionar
+  
 
   const boxStyles = {
     p: "10px",
@@ -69,12 +69,3 @@ export default function Dashboard() {
   )
 }
 
-// tem que instalar o json-server: npm install -g json-server
-// depois carregar o servico: json-server -w ./data/db.json
-// esse metodo vai carregar os dados
-// pra rodar  o servidor npm run dev
-export const tasksLoader = async () => {
-  const res = await fetch('http://localhost:3000/tasks')
-
-  return res.json()
-}
