@@ -1,5 +1,7 @@
 import { BellIcon, CloseIcon, QuestionOutlineIcon } from "@chakra-ui/icons";
-import { Flex, Spacer, HStack, Breadcrumb, BreadcrumbItem, BreadcrumbLink, IconButton, Divider  } from "@chakra-ui/react";
+import { Flex, Spacer, HStack, Breadcrumb, BreadcrumbItem, BreadcrumbLink, IconButton, Divider, Icon  } from "@chakra-ui/react";
+import { FiBook } from "react-icons/fi";
+import { FiBell, FiBookOpen, FiLogOut } from "react-icons/fi";
 
 export default function Navbar(){
     return (
@@ -28,15 +30,14 @@ export default function Navbar(){
         <Spacer />
 
         <HStack spacing="20px">
-            <IconButton aria-label='Search database' icon={<QuestionOutlineIcon />} />
+            <IconButton aria-label='Manual' icon={<FiBook />} /> 
 
-            <IconButton aria-label='Search database' icon={<BellIcon />} /> 
-
+            <IconButton aria-label='Notificações' icon={<FiBell />} /> 
+    
             <Divider  colorScheme="black"  orientation='vertical' />
-           
-           <IconButton aria-label='Search database' icon={<CloseIcon />} />
 
-            
+            <IconButton aria-label='Logout' icon={<FiLogOut />} /> 
+           
         </HStack>
 
     </Flex>
