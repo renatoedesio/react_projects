@@ -2,11 +2,14 @@ import { AtSignIcon, CalendarIcon, ChatIcon, EditIcon, HamburgerIcon } from "@ch
 import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase,  FiSettings } from 'react-icons/fi'
 import { Avatar, Divider, Flex, Heading, Icon, IconButton, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import NavItems from "../navItems/NavItems";
 
 export default function Sidebar() {
+    // usado pra controlar qual o tamanho da tela.
     const [navSize, changeNavSize] = useState("large")
+
+    // usado pra controlar qual link estah ativo ou inativo. Quem preenche esse valor eh o NavItems
+    const [activeLink, setActiveLink] = useState(""); 
 
     return (
         <Flex 
@@ -38,13 +41,15 @@ export default function Sidebar() {
                                 changeNavSize("small")
                         }}
                     />
+                    <NavItems active={activeLink == "Dashboard"}  title="Dashboard"     navSize={navSize} icon={FiHome}         goTo={"/"}          setActiveLink={setActiveLink} /> 
+                    <NavItems active={activeLink == "Workspace"}  title="Workspace"     navSize={navSize} icon={FiCalendar}     goTo={"/workspace"} setActiveLink={setActiveLink}/>
+                    <NavItems active={activeLink == "Laudos"}     title="Laudos"        navSize={navSize} icon={FiUser}         goTo={"/create"}    setActiveLink={setActiveLink}/>
+                    <NavItems active={activeLink == "Reportar"}   title="Reportar"      navSize={navSize} icon={FiDollarSign}   goTo={"/profile"}   setActiveLink={setActiveLink}/>
 
-                    <NavItems navSize={navSize} icon={FiHome} title={"Dashboard"}/> 
-                    <NavItems navSize={navSize} icon={FiCalendar} title="Calendar" active />
-                    <NavItems navSize={navSize} icon={FiUser} title="Clients" />
-                    <NavItems navSize={navSize} icon={FiDollarSign} title="Stocks" />
-                    <NavItems navSize={navSize} icon={FiBriefcase} title="Reports" />
-                    <NavItems navSize={navSize} icon={FiSettings} title="Settings" />
+                    <Divider mt={10} display={navSize == "small" ? "none": "flex"}/>
+
+                    <NavItems navSize={navSize} icon={FiBriefcase} title="Configurações" />
+                    <NavItems navSize={navSize} icon={FiSettings} title="Suporte" />
             </Flex>
 
             <Flex
