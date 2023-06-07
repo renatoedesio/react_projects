@@ -64,7 +64,7 @@ export default function Sidebar() {
                 <Divider display={navSize == "small" ? "none": "flex"}/>
 
                 <Flex mt={4} align={"center"}>
-                    <Avatar size="sm" src="avatar-1.jpg"/>
+                    <Avatar size="sm" src='https://bit.ly/dan-abramov' />
                     <Flex flexDir="column" ml={4} display={navSize == "small" ? "none": "flex"}>
                         <Heading as={"h3"} size="sm">Mirian Santos</Heading>
                         <Text color="gray">Perito Criminal</Text>
