@@ -1,6 +1,6 @@
-import { AtSignIcon, CalendarIcon, ChatIcon, EditIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { AtSignIcon, CalendarIcon, ChatIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, PhoneIcon } from "@chakra-ui/icons";
 import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase,  FiSettings } from 'react-icons/fi'
-import { Avatar, Divider, Flex, Heading, Icon, IconButton, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Avatar, Button, Divider, Flex, Heading, Icon, IconButton, List, ListIcon, ListItem, MenuButton, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import NavItems from "../navItems/NavItems";
 
@@ -41,10 +41,32 @@ export default function Sidebar() {
                                 changeNavSize("small")
                         }}
                     />
+
+            <Flex
+                p="5%"
+                flexDir="column"
+                w="100%"
+                alignItems={navSize == "small" ? "center" : "flex-start"}
+                
+            >
+
+                <Divider display={navSize == "small" ? "none": "flex"}/>
+
+                <Flex mt={4} mb={4} align={"center"}>
+                    <Avatar size="sm" src='https://bit.ly/dan-abramov' />
+                    <Flex flexDir="column" ml={4} display={navSize == "small" ? "none": "flex"}>
+                        <Heading as={"h3"} size="sm">Mirian Santos</Heading>
+                        <Text color="gray">Perito Criminal</Text>
+                    </Flex>
+                </Flex>
+
+                <Divider display={navSize == "small" ? "none": "flex"}/>
+            </Flex>
+
                     <NavItems active={activeLink == "Dashboard"}  title="Dashboard"     navSize={navSize} icon={FiHome}         goTo={"/"}          setActiveLink={setActiveLink} /> 
                     <NavItems active={activeLink == "Workspace"}  title="Workspace"     navSize={navSize} icon={FiCalendar}     goTo={"/workspace"} setActiveLink={setActiveLink}/>
                     <NavItems active={activeLink == "Laudos"}     title="Laudos"        navSize={navSize} icon={FiUser}         goTo={"/create"}    setActiveLink={setActiveLink}/>
-                    <NavItems active={activeLink == "Ocorrência"} title="Ocorrência"        navSize={navSize} icon={FiUser}     goTo={"/ocorrencia"}    setActiveLink={setActiveLink}/>
+                    <NavItems active={activeLink == "Ocorrência"} title="Ocorrência"     navSize={navSize} icon={FiUser}     goTo={"/ocorrencia"}    setActiveLink={setActiveLink}/>
                     <NavItems active={activeLink == "Reportar"}   title="Reportar"      navSize={navSize} icon={FiDollarSign}   goTo={"/profile"}   setActiveLink={setActiveLink}/>
 
                     <Divider mt={10} display={navSize == "small" ? "none": "flex"}/>
@@ -57,19 +79,20 @@ export default function Sidebar() {
                 p="5%"
                 flexDir="column"
                 w="100%"
-                alignItems={navSize == "small" ? "center" : "flex-start"}
+                alignItems={"center"}
                 mb={4}
             >
 
                 <Divider display={navSize == "small" ? "none": "flex"}/>
+                <Flex flexDir="column" display={navSize == "small" ? "none": "flex"}>
+                    <Button colorScheme='blue' mt={2}>Abrir Chamado</Button>
+                </Flex>
 
-                <Flex mt={4} align={"center"}>
-                    <Avatar size="sm" src='https://bit.ly/dan-abramov' />
-                    <Flex flexDir="column" ml={4} display={navSize == "small" ? "none": "flex"}>
-                        <Heading as={"h3"} size="sm">Mirian Santos</Heading>
-                        <Text color="gray">Perito Criminal</Text>
-                    </Flex>
 
+                <Flex flexDir="column" display={navSize == "small" ? "flex" : "none"}>
+                    <Button  size='sm' colorScheme='blue' >
+                        <PhoneIcon />
+                    </Button>
                 </Flex>
             </Flex>
         </Flex>
