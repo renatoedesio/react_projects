@@ -44,6 +44,7 @@ export default function Sidebar() {
                     <NavItems active={activeLink == "Dashboard"}  title="Dashboard"     navSize={navSize} icon={FiHome}         goTo={"/"}          setActiveLink={setActiveLink} /> 
                     <NavItems active={activeLink == "Workspace"}  title="Workspace"     navSize={navSize} icon={FiCalendar}     goTo={"/workspace"} setActiveLink={setActiveLink}/>
                     <NavItems active={activeLink == "Laudos"}     title="Laudos"        navSize={navSize} icon={FiUser}         goTo={"/create"}    setActiveLink={setActiveLink}/>
+                    <NavItems active={activeLink == "Ocorrência"} title="Ocorrência"        navSize={navSize} icon={FiUser}     goTo={"/ocorrencia"}    setActiveLink={setActiveLink}/>
                     <NavItems active={activeLink == "Reportar"}   title="Reportar"      navSize={navSize} icon={FiDollarSign}   goTo={"/profile"}   setActiveLink={setActiveLink}/>
 
                     <Divider mt={10} display={navSize == "small" ? "none": "flex"}/>

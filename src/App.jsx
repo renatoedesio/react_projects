@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard'
 import Create from './pages/Create'
 import Profile from './pages/Profile'
 import Workspace from './pages/Workspace'
+import Ocorrencia from './pages/Ocorrencia'
 
 // router and routes
 const router = createBrowserRouter(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       <Route index element={<Dashboard /> } />
       <Route path="workspace" element={<Workspace />} />
       <Route path="create" element={<Create />} />
-      <Route path="profile" element={<Profile />} />
+      <Route path="ocorrencia" element={<Ocorrencia />} />
     </Route>
   )
 )

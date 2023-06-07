@@ -1,7 +1,7 @@
 export function loadLists() {
   return [
     { 
-      title: 'Tarefas', 
+      title: 'Pendente', 
       creatable: true,
       cards: [
         {
@@ -27,7 +27,7 @@ export function loadLists() {
       ]
     },
     { 
-      title: 'Fazendo', 
+      title: 'Análise de viabilidade', 
       creatable: false,
       cards: [
         {
@@ -39,7 +39,7 @@ export function loadLists() {
       ]
     },
     { 
-      title: 'Pausado', 
+      title: 'Em andamento', 
       creatable: false,
       cards: [
         {
