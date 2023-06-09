@@ -1,55 +1,23 @@
 import { Outlet } from "react-router-dom"
-import { Flex, Grid, GridItem, IconButton, Text } from "@chakra-ui/react"
+import { Box, Flex, Grid, GridItem, HStack, IconButton, Text } from "@chakra-ui/react"
 import Sidebar from "./sidebar/Sidebar"
 import Navbar from "./navbar/Navbar"
 
 export default function RootLayout() {
   return (
-    <Flex w="100%">
-      <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
-        <GridItem
-          as="aside"
-          colSpan={{base: 6, lg:2, xl:1 }}
-          minHeight={{lg:'100hv'}}
-          p={{base: '20px', lg:'20px' }}> 
+    <HStack w={"full"} h={"100vh"} bg={"gray.100"} padding={5}>
+      <Flex as="aside">
           <Sidebar /> {/* SideBar eh onde fica listado os itens de menu, foto do perfil, etc */}
- 
-        </GridItem>
-            <GridItem
-              as="main"
-              colSpan={{base: 6, lg:4, xl: 5 }}
-              p="40px"
-              w={"100%"} >
-          <Navbar />  {/* Navbar eh top da pagina. Onde fica o breadcrub e botoes pra sair */}
-          <Outlet />
-        </GridItem>
-      </Grid>
+      </Flex>
+      <Flex as="main" w="full" p={5} h="full" direction={"column"} justifyContent={"flex-start"}>
+          <Box w={"100%"}>
+            <Navbar />  {/* Navbar eh top da pagina. Onde fica o breadcrub e botoes pra sair */}
+          </Box>
+          <Box  w={"100%"}>
+              <Outlet />
+          </Box>
+        </Flex>
+    </HStack>
 
-
-
-    </Flex>
-
-      /*
-      <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
-        <GridItem
-          as="aside"
-          colSpan={{base: 6, lg:2, xl:1 }}
-          bg={"purple.400"}
-          minHeight={{lg:'100hv'}}
-          p={{base: '20px', lg:'20px' }}
-        > 
-          <Sidebar />
- 
-        </GridItem>
-            <GridItem
-              as="main"
-              colSpan={{base: 6, lg:4, xl: 5 }}
-              p="40px"
-            >
-          <Navbar />
-          <Outlet />
-        </GridItem>
-      </Grid>
-    */
   )
 }

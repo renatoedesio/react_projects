@@ -21,7 +21,8 @@ export default function Sidebar() {
             borderRadius={navSize== "small" ? "15px"  : "30px"}
             w={navSize == "small"  ? "75px" : "200px"}
             flexDir="column"
-            justifyContent="space-between">
+            justifyContent="space-between"
+            bg={"white"}>
             
             <Flex
                 p="5%"
