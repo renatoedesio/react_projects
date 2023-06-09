@@ -11,10 +11,10 @@ export default function RootLayout() {
       </Flex>
       <Flex as="main" w="full" p={5} h="full" direction={"column"} justifyContent={"flex-start"}>
           <Box w={"100%"}>
-            <Navbar />  {/* Navbar eh top da pagina. Onde fica o breadcrub e botoes pra sair */}
+            <Navbar />  {/* Navbar eh topo da pagina. Onde fica o breadcrub e botoes pra sair */}
           </Box>
           <Box  w={"100%"}>
-              <Outlet />
+              <Outlet /> {/* Outlet eh o conteudo em si */}
           </Box>
         </Flex>
     </HStack>
