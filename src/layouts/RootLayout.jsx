@@ -11,17 +11,16 @@ export default function RootLayout() {
           as="aside"
           colSpan={{base: 6, lg:2, xl:1 }}
           minHeight={{lg:'100hv'}}
-          p={{base: '20px', lg:'20px' }}
-        > 
-          <Sidebar />
+          p={{base: '20px', lg:'20px' }}> 
+          <Sidebar /> {/* SideBar eh onde fica listado os itens de menu, foto do perfil, etc */}
  
         </GridItem>
             <GridItem
               as="main"
               colSpan={{base: 6, lg:4, xl: 5 }}
               p="40px"
-            >
-          <Navbar />
+              w={"100%"} >
+          <Navbar />  {/* Navbar eh top da pagina. Onde fica o breadcrub e botoes pra sair */}
           <Outlet />
         </GridItem>
       </Grid>

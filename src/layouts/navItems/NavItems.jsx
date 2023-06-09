@@ -24,10 +24,11 @@ export default function NavItem({icon, title, description, active, navSize, goTo
                 <NavLink to={goTo}>
                 <Link
                     backgroundColor={active && "#AEC8CA"}
-                    p={navSize == "small" ? "0" : "3"} 
+                    p={navSize == "small" ? "1" : "3"} 
                     borderRadius={8}
                     _hover={{ textDecor: 'none', backgroundColor: "#AEC8CA" }}
-                    w={navSize == "large" && "100%"}> 
+                    w={navSize == "large" && "100%"}
+                    ml={navSize == "small" ? -2 : 0}> {/* Preciso compensar o deslocamento do padding quando fica pequeno. Por isso -2 */}
               
                     <MenuButton w="100%">
                         <Flex justifyContent={'center'}>
