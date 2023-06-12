@@ -4,6 +4,7 @@ import { useDrag, useDrop } from 'react-dnd';
 import BoardContext from '../Board/context';
 
 import { Container, Label } from './styles';
+import { Heading, Text, Tag } from '@chakra-ui/react';
 
 export default function Card({ data, index, listIndex }) {
   const ref = useRef();
@@ -55,14 +56,12 @@ export default function Card({ data, index, listIndex }) {
 
   return (
     <Container ref={ref} isDragging={isDragging}>
-      <header>
+      <Heading  as='h5' size='sm' >Ocorrência de caminhão</Heading>
 
-       {/* {data.labels.map(label => <Label key={label} color={label} />)} */}
+      <Text mt={3}>{data.content}</Text>
 
-
-      </header>
-      <p>{data.content}</p>
-      {/* data.user && <img src={data.user} alt=""/> */}
+      <Tag mt={3} colorScheme='orange'>Pendente</Tag>
+ 
     </Container>
   );
 }
