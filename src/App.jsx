@@ -11,7 +11,7 @@ import Ocorrencia from './pages/Ocorrencia'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Dashboard /> } />
+      <Route index element={<Workspace /> } />
       <Route path="workspace" element={<Workspace />} />
       <Route path="create" element={<Create />} />
       <Route path="ocorrencia" element={<Ocorrencia />} />
