@@ -1,8 +1,10 @@
-import { AtSignIcon, CalendarIcon, ChatIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, PhoneIcon } from "@chakra-ui/icons";
 import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase, FiSettings } from 'react-icons/fi'
-import { Avatar, Box, Button, Divider, Flex, Heading, Image, IconButton, List, ListIcon, ListItem, MenuButton, Text } from "@chakra-ui/react";
+import { Avatar, Box, Button, Divider, Flex, Heading,  IconButton, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import NavItems from "../navItems/NavItems";
+import NavItems from "../navItems"
+import { Container } from './styles';
+import { PhoneIcon } from '@chakra-ui/icons';
+
 
 export default function Sidebar() {
     // usado pra controlar qual o tamanho da tela.

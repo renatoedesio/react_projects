@@ -1,7 +1,6 @@
-import { BellIcon, CloseIcon, QuestionOutlineIcon } from "@chakra-ui/icons";
 import { Flex, Spacer, HStack, Breadcrumb, BreadcrumbItem, BreadcrumbLink, IconButton, Divider, Icon  } from "@chakra-ui/react";
 import { FiBook } from "react-icons/fi";
-import { FiBell, FiBookOpen, FiLogOut } from "react-icons/fi";
+import { FiBell, FiLogOut } from "react-icons/fi";
 
 export default function Navbar(){
     return (

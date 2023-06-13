@@ -1,9 +1,7 @@
 import React, { useRef, useContext } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
-
 import BoardContext from '../Board/context';
-
-import { Container, Label } from './styles';
+import { Container } from './styles';
 import { Heading, Text, Tag } from '@chakra-ui/react';
 
 export default function Card({ data, index, listIndex }) {

@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-    Flex,
-    Text,
-    Icon,
-    Link,
-    Menu,
-    MenuButton,
-    MenuList
-} from '@chakra-ui/react'
+import { Flex,  Text, Icon, Link, Menu, MenuButton } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 
 
@@ -18,8 +10,7 @@ export default function NavItem({icon, title, description, active, navSize, goTo
             mt={30}
             flexDir="column"
             w="100%"
-            alignItems={navSize == "small" ? "center" : "flex-start"}
-        >
+            alignItems={navSize == "small" ? "center" : "flex-start"}>
             <Menu placement="right">
                 <NavLink to={goTo}>
                 <Link
