@@ -1,7 +1,7 @@
 import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase, FiSettings } from 'react-icons/fi'
 import { Avatar, Box, Button, Divider, Flex, Heading,  IconButton, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import NavItems from "../navItems"
+import NavItems from "../NavItems"
 import { Container } from './styles';
 import { PhoneIcon } from '@chakra-ui/icons';
 
@@ -24,7 +24,7 @@ export default function Sidebar() {
             w={navSize == "small" ? "75px" : "200px"}
             flexDir="column"
             justifyContent="space-between"
-            bg={"white"}>
+            bg={"white"}> 
 
             <Flex
                 p="5%"
@@ -108,7 +108,5 @@ export default function Sidebar() {
                 </Flex>
             </Flex>
         </Flex>
-
-
     )
 }

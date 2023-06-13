@@ -1,15 +1,9 @@
-import { 
-  createBrowserRouter, 
-  createRoutesFromElements, 
-  Route, 
-  RouterProvider 
-} from 'react-router-dom'
+import {  createBrowserRouter,  createRoutesFromElements,  Route,  RouterProvider} from 'react-router-dom'
 
 // layouts and pages
-import RootLayout from './layouts/RootLayout'
+import RootLayout from './components/Layout/RootLayout'
 import Dashboard from './pages/Dashboard'
 import Create from './pages/Create'
-import Profile from './pages/Profile'
 import Workspace from './pages/Workspace'
 import Ocorrencia from './pages/Ocorrencia'
 
