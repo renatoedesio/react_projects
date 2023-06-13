@@ -1,5 +1,5 @@
-import { GlobalStyle, Heading } from "@chakra-ui/react";
-import Board from "../components/Board";
+import { GlobalStyle } from "@chakra-ui/react";
+import Board from "../components/DragDrop/Board";
 
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -10,8 +10,7 @@ export default function Workspace() {
       <DndProvider backend={HTML5Backend}>
         <Board />
         <GlobalStyle />
-    </DndProvider>
-   
+      </DndProvider>
    </>
   )
 }

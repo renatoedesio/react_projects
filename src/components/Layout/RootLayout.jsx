@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Box, Flex, HStack } from "@chakra-ui/react"
-import Sidebar from "./sidebar"
-import Navbar from "./navbar"
+import Sidebar from "./Sidebar"
+import Navbar from "./Navbar"
 
 
 export default function RootLayout() {
