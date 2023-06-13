@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavItems from "../NavItems"
 import { Container } from './styles';
 import { PhoneIcon } from '@chakra-ui/icons';
+import { useKeycloak } from "@react-keycloak/web";
 
 
 export default function Sidebar() {
@@ -12,6 +13,8 @@ export default function Sidebar() {
 
     // usado pra controlar qual link estah ativo ou inativo. Quem preenche esse valor eh o NavItems
     const [activeLink, setActiveLink] = useState("");
+
+    const { keycloak, initialized } = useKeycloak();
 
     return (
         <Flex
@@ -25,6 +28,21 @@ export default function Sidebar() {
             flexDir="column"
             justifyContent="space-between"
             bg={"white"}> 
+
+            {!keycloak.authenticated && (
+            <Button colorScheme='blue' onClick={() => keycloak.login()}>Login</Button>
+            )}
+
+            {!!keycloak.authenticated && (
+                <Button
+                    type="button"
+                    className="text-blue-800"
+                    onClick={() => keycloak.logout()}
+                >
+                    Logout ({keycloak.tokenParsed.preferred_username})
+                </Button>
+            )}
+
 
             <Flex
                 p="5%"
@@ -58,9 +76,9 @@ export default function Sidebar() {
                     p="5%"
                     flexDir="column"
                     w="100%"
-                    alignItems={navSize == "small" ? "center" : "flex-start"}
+                    alignItems={navSize == "small" ? "center" : "flex-start"}>
 
-                >
+                    
 
                     <Divider display={navSize == "small" ? "none" : "flex"} />
 
