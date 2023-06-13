@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import produce from 'immer';
 import { loadLists } from '../../services/api';
 import BoardContext from './context';
-import List from '../DragDrop/List';
+import List from '../List';
 
 import { Container } from './styles';
 

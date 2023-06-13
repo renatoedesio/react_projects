@@ -1,4 +1,4 @@
-import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase, FiSettings } from 'react-icons/fi'
+import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase, FiSettings, FiUserPlus, FiAirplay, FiExternalLink } from 'react-icons/fi'
 import { Avatar, Box, Button, Divider, Flex, Heading,  IconButton, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import NavItems from "../NavItems"
@@ -75,16 +75,18 @@ export default function Sidebar() {
                     <Divider display={navSize == "small" ? "none" : "flex"} />
                 </Flex>
 
-
                 <NavItems active={activeLink == "Workspace"} title="Workspace" navSize={navSize} icon={FiCalendar} goTo={"/workspace"} setActiveLink={setActiveLink} />
-                { /* <NavItems active={activeLink == "Laudos"} title="Laudos" navSize={navSize} icon={FiUser} goTo={"/create"} setActiveLink={setActiveLink} /> */}
                 <NavItems active={activeLink == "Ocorrência"} title="Ocorrência" navSize={navSize} icon={FiUser} goTo={"/ocorrencia"} setActiveLink={setActiveLink} />
-                { /* <NavItems active={activeLink == "Reportar"} title="Reportar" navSize={navSize} icon={FiDollarSign} goTo={"/profile"} setActiveLink={setActiveLink} /> */}
+
+                <NavItems active={activeLink == "Laudos"} title="Laudos" navSize={navSize} icon={FiBriefcase} setActiveLink={setActiveLink} />
+                <NavItems active={activeLink == "Formbuilder"} title="Formbuilder" navSize={navSize} icon={FiExternalLink}  setActiveLink={setActiveLink} />
+                <NavItems active={activeLink == "Reportar"} title="Reportar" navSize={navSize} icon={FiAirplay} setActiveLink={setActiveLink} />
+
 
                 <Divider mt={10} display={navSize == "small" ? "none" : "flex"} />
 
-                <NavItems navSize={navSize} icon={FiBriefcase} title="Configurações" />
-                <NavItems navSize={navSize} icon={FiSettings} title="Suporte" />
+                <NavItems navSize={navSize} icon={FiSettings} title="Configurações" />
+                <NavItems navSize={navSize} icon={FiUserPlus} title="Suporte" />
             </Flex>
 
             <Flex
