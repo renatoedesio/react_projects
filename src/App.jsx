@@ -9,30 +9,16 @@ import Create from './pages/Create'
 import Workspace from './pages/Workspace'
 import Ocorrencia from './pages/Ocorrencia'
 import PrivateRoute from './utils/PrivateRoute';
+import AppRouter from './routes';
 
-// router and routes
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Workspace /> } />
-      <Route path="workspace" element={<Workspace />} />
-      <Route path="create" element={<Create />} />
-      <Route path="ocorrencia" element={
-         <PrivateRoute>
-          <Ocorrencia />
-        </PrivateRoute>
-        } 
-      />
-     
-    </Route>
-  )
-)
+
 
 function App() {
   return (
   
     <ReactKeycloakProvider authClient={keycloak}>
-      <RouterProvider router={router} />
+      <AppRouter />
+      
     </ReactKeycloakProvider>
    
   )
