@@ -85,7 +85,7 @@ export default function Sidebar() {
                     <Flex mt={4} mb={4} align={"center"}>
                         <Avatar size="sm" src='https://bit.ly/dan-abramov' />
                         <Flex flexDir="column" ml={4} display={navSize == "small" ? "none" : "flex"}>
-                            <Heading as={"h3"} size="sm">Mirian Santos</Heading>
+                            <Heading as={"h3"} size="sm"> {keycloak.tokenParsed.preferred_username}</Heading>
                             <Text color="gray">Perito Criminal</Text>
                         </Flex>
                     </Flex>
