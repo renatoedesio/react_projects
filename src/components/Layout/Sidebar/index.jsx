@@ -29,21 +29,6 @@ export default function Sidebar() {
             justifyContent="space-between"
             bg={"white"}> 
 
-            {!keycloak.authenticated && (
-            <Button colorScheme='blue' onClick={() => keycloak.login()}>Login</Button>
-            )}
-
-            {!!keycloak.authenticated && (
-                <Button
-                    type="button"
-                    className="text-blue-800"
-                    onClick={() => keycloak.logout()}
-                >
-                    Logout ({keycloak.tokenParsed.preferred_username})
-                </Button>
-            )}
-
-
             <Flex
                 p="5%"
                 flexDir={"column"}
